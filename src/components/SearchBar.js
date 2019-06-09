@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className='searchBar'>
+      <div className='search-bar'>
         <form onSubmit={(e) => this.submitSearch(e)}>
           <input onChange={(e) => this.handleUpdate(e)} type='text' name='keyword' id='keyword' />
           <button type='submit'>Submit</button>

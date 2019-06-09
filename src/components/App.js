@@ -1,19 +1,21 @@
 import React from 'react';
 import api from '../apis/youtube';
 import SearchBar from './SearchBar';
+import VideoList from './VideoList';
 
 class App extends React.Component {
   state = {
     keyword: null,
     prevPageToken: null,
     nextPageToken: null,
-    results: {}
+    videos: []
   };
 
   render() {
     return (
       <div className="App">
         <SearchBar searchFn={this.youtubeSearch} />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
@@ -29,7 +31,7 @@ class App extends React.Component {
           keyword,
           nextPageToken: response.data.nextPageToken,
           prevPageToken: response.data.prevPageToken,
-          results: response.data.items
+          videos: response.data.items
         });
       })
       .catch((error) => {
