@@ -6,7 +6,8 @@ const axiosInstance = axios.create({
   baseURL: 'https://www.googleapis.com/youtube/v3',
   params: {
     key: API_TOKEN,
-    part: 'snippet'
+    part: 'snippet',
+    type: 'video'
   }
 });
 
