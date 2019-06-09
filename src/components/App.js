@@ -3,13 +3,15 @@ import api from '../apis/youtube';
 import './App.css';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
+import VideoPlayer from './VideoPlayer';
 
 class App extends React.Component {
   state = {
     keyword: null,
     prevPageToken: null,
     nextPageToken: null,
-    videos: []
+    videos: [],
+    playingVideo: {}
   };
 
   render() {
@@ -24,9 +26,10 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-7">
+            <VideoPlayer video={this.state.playingVideo} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.state.videos} />
+            <VideoList videos={this.state.videos} playFn={this.playVideo} />
           </div>
         </div>
       </div>
@@ -44,13 +47,18 @@ class App extends React.Component {
           keyword,
           nextPageToken: response.data.nextPageToken,
           prevPageToken: response.data.prevPageToken,
-          videos: response.data.items
+          videos: response.data.items,
+          playingVideo: response.data.items[0]
         });
       })
       .catch((error) => {
         console.log(error, 'error!');
         console.log(error.response, 'error response!');
       });
+  }
+
+  playVideo = (video) => {
+    this.setState({ playingVideo: video });
   }
 }
 

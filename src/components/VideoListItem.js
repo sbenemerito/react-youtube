@@ -5,7 +5,7 @@ class VideoListItem extends React.Component {
     const { video } = this.props;
 
     return (
-      <div className='video-list-item card mb-2'>
+      <div className='video-list-item card mb-2' onClick={(e) => this.props.playFn(video)}>
         <div className="card-body d-flex justify-content-between">
           <img className='video-thumbnail' alt='video-thumbnail' src={video.snippet.thumbnails.default.url} />
           <div className='video-info'>

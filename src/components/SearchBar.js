@@ -12,6 +12,7 @@ class SearchBar extends React.Component {
           <input onChange={(e) => this.handleUpdate(e)} type='text' name='keyword' id='keyword' />
           <button type='submit'>Submit</button>
         </form>
+        <small>You can press <i>Enter</i> instead of clicking <i>Submit</i></small>
       </div>
     );
   }

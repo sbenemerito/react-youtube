@@ -9,7 +9,7 @@ class VideoList extends React.Component {
       <div className='video-list'>
         {
           videos.map((video, key) => {
-            return <VideoListItem key={key} video={video} />
+            return <VideoListItem key={key} video={video} playFn={this.props.playFn} />
           })
         }
       </div>
