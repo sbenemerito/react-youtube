@@ -1,0 +1,23 @@
+* {
+  font-family: Montserrat;
+}
+
+.video-list-item {
+  cursor: pointer;
+}
+
+.video-thumbnail {
+  max-height: 90px !important;
+}
+
+.video-info {
+  width: 80%;
+}
+
+.video-info-title {
+  font-weight: 600;
+}
+
+.video-info-desc {
+  font-size: 0.8em;
+}

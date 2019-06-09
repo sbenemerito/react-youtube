@@ -5,10 +5,14 @@ class VideoListItem extends React.Component {
     const { video } = this.props;
 
     return (
-      <div className='video-list-item'>
-        <img alt='video-thumbnail' src={video.snippet.thumbnails.default.url} />
-        <p>{video.snippet.title}</p>
-        <p>{video.snippet.description}</p>
+      <div className='video-list-item card mb-2'>
+        <div className="card-body d-flex justify-content-between">
+          <img className='video-thumbnail' alt='video-thumbnail' src={video.snippet.thumbnails.default.url} />
+          <div className='video-info'>
+            <p className='video-info-title'>{video.snippet.title}</p>
+            <span className='video-info-desc'>{video.snippet.description}</span>
+          </div>
+        </div>
       </div>
     );
   }

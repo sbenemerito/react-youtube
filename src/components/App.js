@@ -1,5 +1,6 @@
 import React from 'react';
 import api from '../apis/youtube';
+import './App.css';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 
@@ -13,9 +14,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <SearchBar searchFn={this.youtubeSearch} />
-        <VideoList videos={this.state.videos} />
+      <div className="App m-5">
+        <div className="row mb-5">
+          <div className="col-md-12 text-center">
+            <h1>YouTube-</h1>
+            <p>a simple React app that accesses the YouTube API</p>
+            <SearchBar searchFn={this.youtubeSearch} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-7">
+          </div>
+          <div className="col-md-5">
+            <VideoList videos={this.state.videos} />
+          </div>
+        </div>
       </div>
     );
   }
